@@ -1,4 +1,4 @@
-<?php
+aaaaaaaaaaaaaaa<?php
 /**
  * @var \App\View\AppView $this
  * @var \Cake\Datasource\EntityInterface $room
@@ -36,5 +36,58 @@
             <th scope="row"><?= __('Modified') ?></th>
             <td><?= h($room->modified) ?></td>
         </tr>
+        <table border="1" cellpadding="15">
+        <tr>
+            <th>Lundi</th>
+            <th>Mardi</th>
+            <th>Mercredi</th>
+            <th>Jeudi</th>
+            <th>Vendredi</th>
+            <th>Samedi</th>
+            <th>Dimanche</th>
+        </tr>
+        <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+         </tr>
+         <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+        </tr>
+        <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+       </tr>
+       <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+       </tr>
+       <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+       </tr>
+       <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+       </tr>
+    </table>
     </table>
 </div>
