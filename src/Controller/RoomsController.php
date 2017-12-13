@@ -38,10 +38,17 @@ class RoomsController extends AppController
             'contain' => []
         ]);
 
-        $showtimes = $this->Rooms->Showtimes->find();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <<<<                                                                                                                                                                                                                                                                                                                                                                        SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS111AA1A111A1A1A11111111111111111111111111A>>>>
+        $showtimes = $this->Rooms->Showtimes->find();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
         $this->set('showtimes', $showtimes);    
         $this->set('room', $room);
         $this->set('_serialize', ['room']);
+        /*if($room =  ){
+            for($i=0;i<7;i++){    
+                $showtimesthisweek = [
+                    
+                ]
+            }
+        }*/
     }
 
     /**

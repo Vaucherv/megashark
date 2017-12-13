@@ -29,6 +29,8 @@
             <?php foreach ($showtimes as $showtime): ?>
             <tr>
                 <td><?= $this->Number->format($showtime->id) ?></td>
+                <td><?= $showtime->has('movie') ? $this->Html->link($showtime->movie->name, ['controller' =>'Movies', 'action' => 'view', $showtime->movie->id]) : '' ?></td>
+                
                 <td><?= $this->Number->format($showtime->movie_id) ?></td>
                 <td><?= $this->Number->format($showtime->room_id) ?></td>
                 <td><?= h($showtime->start) ?></td>
