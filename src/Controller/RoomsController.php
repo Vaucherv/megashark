@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 /**
  * Rooms Controller
@@ -38,17 +39,32 @@ class RoomsController extends AppController
             'contain' => []
         ]);
 
-        $showtimes = $this->Rooms->Showtimes->find();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+        $showtimes = $this->Rooms->Showtimes->find()-> contain(['Movies','Rooms'])
+                                                    -> select(['id', 'movie_id', 'room_id', 'start', 'end'])
+                                                    -> where(['room_id =' => $room->id])
+                                                    -> where(['start >=' => new Time('monday this week')])
+                                                    -> where(['end <=' => new Time('sunday this week')])
+                                                    -> order(['created' => 'DESC']);
         $this->set('showtimes', $showtimes);    
         $this->set('room', $room);
         $this->set('_serialize', ['room']);
-        /*if($room =  ){
-            for($i=0;i<7;i++){    
-                $showtimesthisweek = [
-                    
-                ]
-            }
-        }*/
+        $showtimesThisWeek = [
+            1 => [],
+            2 => [],
+            3 => [],
+            4 => [],
+            5 => [],
+            6 => [],
+            7 => []
+        ];
+        foreach ($showtimes as $show){
+            $n = $show->start->format('N');
+            array_push($showtimesThisWeek[$n], $show);
+        }
+        $this->set('showtimesThisWeek', $showtimesThisWeek);
+        $this->set('room', $room);
+        $this->set('_serialize', ['room']);
+
     }
 
     /**
